@@ -1,0 +1,104 @@
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| nav                                                                                                                                                                |
+| [ico: menu] [img: marca NAVALHA 27 / BARBERSHOP]                                                                                                                   |
+| [btn: Início] [lnk: Serviços] [lnk: Sobre] [lnk: Estilos] [lnk: Pacotes] [lnk: Time] [lnk: Contato]                                                                |
+| [btn2: [ico: calendário] Agendar agora]                                                                                                                            |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| hero                                                                                                                                                               |
+| +----------------------------------------------------------------------------+  +------------------------------------------------------------------------------+   |
+| | section                                                                    |  | media                                                                        |   |
+| | [t3: BARBERSHOP]                                                           |  | [img: barbeiro atendendo cliente na barbearia]                               |   |
+| | [h1: CORTE, ESTILO E]                                                      |  | [img: estátua lateral, coroa e neon de tesoura/navalha]                      |   |
+| | [h1: ATITUDE]                                                              |  | +------------------------------------------------------------------+         |   |
+| | [t1: Mais que uma barbearia, um ponto de encontro]                         |  | | card5                                                            |         |   |
+| | [t1: para homens que valorizam estilo, cuidado e]                          |  | | [ico: coroa]                                                     |         |   |
+| | [t1: personalidade. Aqui, o corte é só o começo.]                          |  | | [t1: BARBA]                                                      |         |   |
+| | [btn2: [ico: calendário] Agendar agora]                                    |  | | [t1: CABELO]                                                     |         |   |
+| | [btn3: [ico: play] Ver estilos]                                            |  | | [t1: ESTILO]                                                     |         |   |
+| | [ico: tesoura] [t2: Profissionais especializados]                          |  | | [t1: CULTURA]                                                    |         |   |
+| | [ico: diamante] [t2: Ambiente premium]                                     |  | +------------------------------------------------------------------+         |   |
+| | [ico: raio] [t2: Estilo sem limites]                                       |  +------------------------------------------------------------------------------+   |
+| +----------------------------------------------------------------------------+                                                                                     |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| section                                                                                                                                                                                   |
+| +--------------------------+  +------------------------------------+  +----------------------------------+  +----------------------------------+  +-------------------------------------+ |
+| | section                  |  | card                               |  | card                             |  | card                             |  | card                                | |
+| | [t3: NOSSOS SERVIÇOS]    |  | [img: corte degradê]               |  | [img: barba em close]            |  | [img: tesoura e navalha]         |  | [img: cliente com toalha]           | |
+| | [h2: SERVIÇOS]           |  | [ico: tesoura]                     |  | [ico: barba]                     |  | [ico: tesoura + barba]           |  | [ico: coroa]                        | |
+| | [h2: QUE ELEVAM]         |  | [h3: Corte de Cabelo]              |  | [h3: Barba]                      |  | [h3: Combo]                      |  | [h3: Tratamento Premium]            | |
+| | [h2: O SEU ESTILO]       |  | [t2: Do clássico ao moderno,]      |  | [t2: Modelagem, alinhamento]     |  | [t2: Corte + barba com]          |  | [t2: Hidratação, limpeza de pele,]  | |
+| +--------------------------+  | [t2: com técnica e personalidade.] |  | [t2: e cuidado completo.]        |  | [t2: condição especial.]         |  | [t2: revitalização capilar e mais.] | |
+|                               | [btn4: [ico: seta à direita]]      |  | [btn4: [ico: seta à direita]]    |  | [btn4: [ico: seta à direita]]    |  | [btn4: [ico: seta à direita]]       | |
+|                               +------------------------------------+  +----------------------------------+  +----------------------------------+  +-------------------------------------+ |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
++------------------------------------------------------------------------------+  +----------------------------------------------------------------------------------------------------------------+
+| section                                                                      |  | section                                                                                                        |
+| [img: leão coroado sobre papel rasgado]                                      |  | [t3: INSPIRAÇÃO DE ESTILO]                                                                                     |
+| [t3: SOBRE A NAVALHA 27]                                                     |  | [h2: GALERIA NAVALHA 27]                                                                                       |
+| [h2: MAIS QUE CORTES,]                                                       |  | +------------------------+  +------------------------+  +------------------------+  +------------------------+ |
+| [h2: UMA CULTURA.]                                                           |  | | media                  |  | media                  |  | media                  |  | media                  | |
+| [t2: A Navalha 27 nasceu da união entre a arte da]                           |  | | [img: corte degradê]   |  | [img: barba e óculos]  |  | [img: cabelo claro]    |  | [img: tranças]         | |
+| [t2: barbearia, a estética urbana e a autenticidade de]                      |  | +------------------------+  +------------------------+  +------------------------+  +------------------------+ |
+| [t2: quem vive o estilo como expressão. Inspirada na]                        |  | [btn5: [ico: próxima imagem]]                                                                                  |
+| [t2: cultura de rua, no universo das tatuagens e na]                         |  | [ico: indicadores do carrossel]                                                                                |
+| [t2: alfaiataria moderna, somos um espaço para]                              |  +----------------------------------------------------------------------------------------------------------------+
+| [t2: homens que não se contentam com o comum.]                               |                                                                                                                    
+| +--------------------------------------------------------------------+       |                                                                                                                    
+| | media                                                              |       |                                                                                                                    
+| | [img: interior da barbearia em foto com fita]                      |       |                                                                                                                    
+| | [t1: DESDE 2021]                                                   |       |                                                                                                                    
+| | [t1: NA CENA]                                                      |       |                                                                                                                    
+| +--------------------------------------------------------------------+       |                                                                                                                    
++------------------------------------------------------------------------------+                                                                                                                    
+
++-----------------------------------------------------------------------------------+  +------------------------------------------------------------------------------+
+| section                                                                           |  | card2                                                                        |
+| [t3: O QUE OS CLIENTES DIZEM]                                                     |  | [img: papel dourado, navalha e espuma]                                       |
+| [h2: É A TROPA]                                                                   |  | [t3: PACOTE EM DESTAQUE]                                                     |
+| [h2: QUE CONFIRMA]                                                                |  | [h2: COMBO]                                                                  |
+| +--------------------------------------+  +-------------------------------------+ |  | [h2: NAVALHA 27]                                                             |
+| | quote                                |  | quote                               | |  | [t2: De R$ 180,00]                                                           |
+| | [av: Rafael]                         |  | [av: Lucas]                         | |  | [t1: Por R$ 149,90]                                                          |
+| | [t1: Rafael Martins]                 |  | [t1: Lucas Almeida]                 | |  | [ico: check] [t2: Corte personalizado]                                       |
+| | [ico: cinco estrelas]                |  | [ico: cinco estrelas]               | |  | [ico: check] [t2: Modelagem de barba]                                        |
+| | [t2: Ambiente incrível, equipe]      |  | [t2: Muito mais que uma barbearia.] | |  | [ico: check] [t2: Tratamento hidratação premium]                             |
+| | [t2: de respeito e o corte sempre]   |  | [t2: É estilo, atendimento e]       | |  | [ico: check] [t2: Finalização exclusiva]                                     |
+| | [t2: no padrão. Virei cliente fiel!] |  | [t2: experiência. A Navalha 27]     | |  | [btn2: [ico: calendário] Quero esse combo]                                   |
+| +--------------------------------------+  | [t2: tem outra pegada!]             | |  +------------------------------------------------------------------------------+
+|                                           +-------------------------------------+ |                                                                                  
+| [btn5: [ico: próximo depoimento]]                                                 |                                                                                  
+| [ico: indicadores do carrossel]                                                   |                                                                                  
++-----------------------------------------------------------------------------------+                                                                                  
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| section                                                                                                                                                                                           |
+| +---------------------------------------+  +----------------------------------+  +----------------------------------+  +----------------------------------+  +----------------------------------+ |
+| | section                               |  | card3                            |  | card3                            |  | card3                            |  | card3                            | |
+| | [t3: NOSSO TIME]                      |  | [img: barbeiro com boné e barba] |  | [img: barbeiro com boné]         |  | [img: barbeiro de óculos]        |  | [img: barbeira tatuada]          | |
+| | [h2: OS BARBEIROS]                    |  | [lnk: [ico: Instagram]]          |  | [lnk: [ico: Instagram]]          |  | [lnk: [ico: Instagram]]          |  | [lnk: [ico: Instagram]]          | |
+| | [h2: DA 27]                           |  | [h3: Rico]                       |  | [h3: Gaúcho]                     |  | [h3: Dante]                      |  | [h3: Mila]                       | |
+| | [t1: Profissionais que unem técnica,] |  | [t2: Barbeiro Chefe]             |  | [t2: Especialista em Corte]      |  | [t2: Especialista em Barba]      |  | [t2: Visagismo & Estilo]         | |
+| | [t1: experiência e estilo de sobra.]  |  | [ico: coroa]                     |  +----------------------------------+  +----------------------------------+  +----------------------------------+ |
+| | [t1: Escolha o seu e marque já!]      |  +----------------------------------+                                                                                                                   |
+| +---------------------------------------+                                                                                                                                                         |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| section                                                                                                                                                            |
+| +------------------------------------------------+  +--------------------------------------------------+  +--------------------------------------------------+     |
+| | media                                          |  | section                                          |  | section                                          |     |
+| | [img: marca NAVALHA 27 / BARBERSHOP]           |  | [h3: FALE COM A GENTE]                           |  | [ico: relógio] [h3: HORÁRIO DE FUNCIONAMENTO]    |     |
+| | [t3: ESTILO · BARBA · CULTURA · ATITUDE]       |  | [ico: WhatsApp] [t1: WhatsApp]                   |  | [t2: Seg a Sex: 10h às 20h]                      |     |
+| | [img: poste de barbearia]                      |  | [t2: (11) 9 8765-4321]                           |  | [t2: Sábado: 9h às 19h]                          |     |
+| +------------------------------------------------+  | [ico: Instagram] [t1: Instagram]                 |  | [t2: Domingo: Fechado]                           |     |
+|                                                     | [t2: @navalha27]                                 |  | [ico: coroa]                                     |     |
+|                                                     | [ico: localização] [t1: Endereço]                |  | [btn2: [ico: calendário] Agendar agora]          |     |
+|                                                     | [t2: Rua Augusta, 1275 – Consolação]             |  | [img: estátua, seta e assinatura 27]             |     |
+|                                                     | [t2: São Paulo – SP]                             |  +--------------------------------------------------+     |
+|                                                     +--------------------------------------------------+                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
