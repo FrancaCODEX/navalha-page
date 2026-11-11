@@ -1,4 +1,5 @@
 const business = window.NAVALHA27;
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- Dados comerciais (assets/config.js) ---------- */
 function whatsappUrl(key) {
@@ -66,8 +67,11 @@ applyBusinessData();
 
 /* ---------- Menu ---------- */
 const menuButton = document.querySelector('.menu-toggle');
-const navigation = document.querySelector('.nav-links');
-const navLinks = [...navigation.querySelectorAll('a')];
+// O ícone de menu abre um painel próprio; a linha de links do desktop nunca se move.
+const navigation = document.querySelector('.nav-drawer');
+const inlineLinks = [...document.querySelectorAll('.nav-links a')];
+const drawerLinks = [...navigation.querySelectorAll('a')];
+const navLinks = [...inlineLinks, ...drawerLinks];
 
 function setMenu(open) {
   menuButton.setAttribute('aria-expanded', String(open));
@@ -80,17 +84,17 @@ const isMenuOpen = () => menuButton.getAttribute('aria-expanded') === 'true';
 menuButton.addEventListener('click', () => {
   const open = !isMenuOpen();
   setMenu(open);
-  if (open) navLinks[0].focus();
+  if (open) drawerLinks[0].focus();
 });
 
 let spyPausedUntil = 0;
-navigation.addEventListener('click', (event) => {
+document.querySelectorAll('.nav-links, .nav-drawer').forEach((menu) => menu.addEventListener('click', (event) => {
   const link = event.target.closest('a');
   if (!link) return;
   setMenu(false);
   markCurrent(link.getAttribute('href').slice(1));
   spyPausedUntil = Date.now() + 1000;
-});
+}));
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && isMenuOpen()) {
@@ -116,7 +120,7 @@ function markCurrent(id) {
   });
 }
 
-const sections = navLinks
+const sections = inlineLinks
   .map((link) => document.querySelector(link.getAttribute('href')))
   .filter(Boolean);
 
@@ -149,28 +153,98 @@ const dots = [...document.querySelectorAll('.gallery-dots .dot')];
 const status = document.querySelector('#carousel-status');
 let currentStyle = 0;
 
-function selectStyle(index) {
-  currentStyle = (index + photos.length) % photos.length;
-  gallery.replaceChildren(...photos.slice(currentStyle), ...photos.slice(0, currentStyle));
+// No celular a galeria vira uma faixa com rolagem nativa; no desktop as fotos trocam de ordem.
+const isScrollMode = () => gallery.scrollWidth > gallery.clientWidth + 4;
+
+function markDots(index) {
   dots.forEach((dot, i) => {
-    const selected = i === currentStyle;
+    const selected = i === index;
     dot.classList.toggle('selected', selected);
     dot.setAttribute('aria-pressed', String(selected));
   });
+}
+
+function selectStyle(index) {
+  currentStyle = (index + photos.length) % photos.length;
+  if (isScrollMode()) {
+    if (gallery.children[0] !== photos[0]) gallery.replaceChildren(...photos);
+    gallery.scrollTo({ left: photos[currentStyle].offsetLeft - gallery.offsetLeft, behavior: reduceMotion ? 'auto' : 'smooth' });
+  } else {
+    gallery.replaceChildren(...photos.slice(currentStyle), ...photos.slice(0, currentStyle));
+    gallery.classList.remove('is-switching');
+    void gallery.offsetWidth;
+    gallery.classList.add('is-switching');
+  }
+  markDots(currentStyle);
   status.textContent = `Estilo ${currentStyle + 1} de ${photos.length} em destaque: ${photos[currentStyle].alt}.`;
 }
 
+gallery.addEventListener('animationend', () => gallery.classList.remove('is-switching'));
 document.querySelector('.gallery-next').addEventListener('click', () => selectStyle(currentStyle + 1));
 dots.forEach((dot, i) => dot.addEventListener('click', () => selectStyle(i)));
+
+let galleryTicking = false;
+gallery.addEventListener('scroll', () => {
+  if (galleryTicking) return;
+  galleryTicking = true;
+  requestAnimationFrame(() => {
+    galleryTicking = false;
+    if (!isScrollMode()) return;
+    const step = photos[1].offsetLeft - photos[0].offsetLeft;
+    const atEnd = gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 4;
+    currentStyle = atEnd ? photos.length - 1 : Math.round(gallery.scrollLeft / step);
+    markDots(currentStyle);
+  });
+}, { passive: true });
+
+window.addEventListener('resize', () => {
+  if (isScrollMode() && gallery.children[0] !== photos[0]) { gallery.replaceChildren(...photos); selectStyle(0); }
+});
 
 let touchStartX = null;
 gallery.addEventListener('touchstart', (event) => { touchStartX = event.touches[0].clientX; }, { passive: true });
 gallery.addEventListener('touchend', (event) => {
-  if (touchStartX === null) return;
+  if (touchStartX === null || isScrollMode()) { touchStartX = null; return; }
   const delta = event.changedTouches[0].clientX - touchStartX;
   if (Math.abs(delta) > 40) selectStyle(currentStyle + (delta < 0 ? 1 : -1));
   touchStartX = null;
 });
+
+/* ---------- Cabeçalho ao rolar ---------- */
+const header = document.querySelector('.nav');
+const updateHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+window.addEventListener('scroll', updateHeader, { passive: true });
+updateHeader();
+
+/* ---------- Revelação na rolagem ---------- */
+// Só o JS esconde os elementos; sem JS (ou com movimento reduzido) tudo aparece normalmente.
+const revealGroups = ['.services-grid .card', '.quotes .quote', '.team-grid .card3', '.polaroid', '.package'];
+if ('IntersectionObserver' in window && !reduceMotion) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-in');
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+
+  revealGroups.forEach((selector) => {
+    document.querySelectorAll(selector).forEach((element, index) => {
+      if (element.getBoundingClientRect().top < window.innerHeight * 0.9) return;
+      element.style.setProperty('--i', index);
+      element.classList.add('reveal');
+      observer.observe(element);
+    });
+  });
+
+  // Rede de segurança: se o observer não disparar, mostra o que já passou pela tela.
+  const pending = () => [...document.querySelectorAll('.reveal:not(.is-in)')];
+  const revealPassed = () => pending().forEach((element) => {
+    if (element.getBoundingClientRect().top < window.innerHeight) element.classList.add('is-in');
+  });
+  window.addEventListener('scroll', () => requestAnimationFrame(revealPassed), { passive: true });
+  window.addEventListener('load', () => setTimeout(revealPassed, 600));
+}
 
 /* ---------- Depoimentos ---------- */
 const quotes = document.querySelector('.quotes');
