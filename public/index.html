@@ -13,9 +13,25 @@
 <link rel="icon" type="image/png" href="assets/icon-crown.png">
 <link rel="preload" as="image" href="assets/hero.jpg" fetchpriority="high">
 <link rel="preload" as="font" type="font/ttf" href="assets/font-1.ttf" crossorigin>
-<script>document.documentElement.classList.add('js')</script>
-<link rel="stylesheet" href="assets/styles.css?v=202611111326">
-<script src="assets/config.js?v=202611111326" defer></script><script src="assets/app.js?v=202611111326" defer></script>
+<link rel="preload" as="font" type="font/ttf" href="assets/font-10.ttf" crossorigin>
+<link rel="preload" as="font" type="font/ttf" href="assets/font-4.ttf" crossorigin>
+<link rel="preload" as="font" type="font/ttf" href="assets/font-3.ttf" crossorigin>
+<link rel="preload" as="font" type="font/ttf" href="assets/font-7.ttf" crossorigin>
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+  // A entrada do hero só começa com as fontes prontas (no máximo 2,5 s de espera).
+  var ready = function () { root.classList.add('fonts-ok'); };
+  if (!document.fonts || !document.fonts.load) { ready(); return; }
+  Promise.race([
+    Promise.all(['16px Anton', '16px "Sedgwick Ave Display"', '16px Inter', '700 16px Inter', '700 16px "Barlow Condensed"'].map(function (f) { return document.fonts.load(f); })),
+    new Promise(function (r) { setTimeout(r, 2500); })
+  ]).then(ready, ready);
+})();
+</script>
+<link rel="stylesheet" href="assets/styles.css?v=202611111336">
+<script src="assets/config.js?v=202611111336" defer></script><script src="assets/app.js?v=202611111336" defer></script>
 </head>
 <body><div class="site">
 <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>

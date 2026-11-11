@@ -2,7 +2,7 @@
   font-family: 'Sedgwick Ave Display';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src: url(font-10.ttf) format('truetype');
 }
 
@@ -10,7 +10,7 @@
   font-family: 'Road Rage';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src: url(font-9.ttf) format('truetype');
 }
 
@@ -18,56 +18,56 @@
   font-family: 'Anton';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src: url(font-1.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Barlow Condensed';
   font-style: normal;
   font-weight: 600;
-  font-display: swap;
+  font-display: block;
   src: url(font-2.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Barlow Condensed';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
   src: url(font-3.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src: url(font-4.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
+  font-display: block;
   src: url(font-5.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
-  font-display: swap;
+  font-display: block;
   src: url(font-6.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
   src: url(font-7.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Knewave';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src: url(font-8.ttf) format('truetype');
 }
 
@@ -542,15 +542,15 @@ section, footer { scroll-margin-top: calc(var(--nav-h) + 12px); }
 .h1-line { display: block; overflow: clip; padding-bottom: .06em; margin-bottom: -.06em; }
 .h1-line > span { display: inline-block; }
 .js .hero::before { animation: hero-photo 1.5s var(--ease-out) both; }
-.js .hero-kicker, .js .hero-crown { animation: rise 600ms var(--ease-out) 80ms both; }
-.js .h1-line > span { animation: line-up 760ms var(--ease-out) 140ms both; }
-.js .hero-brush { animation: brush-wipe 900ms cubic-bezier(.65, 0, .35, 1) 420ms both; }
-.js .hero-description { animation: rise 600ms var(--ease-out) 820ms both; }
-.js .hero-actions > * { animation: rise 560ms var(--ease-out) 900ms both; }
-.js .hero-actions > *:nth-child(2) { animation-delay: 960ms; }
-.js .hero-benefits li { animation: rise 520ms var(--ease-out) 1020ms both; }
-.js .hero-benefits li:nth-child(2) { animation-delay: 1080ms; } .js .hero-benefits li:nth-child(3) { animation-delay: 1140ms; }
-.js .culture-note { animation: note-in 800ms var(--ease-out) 1000ms both; }
+.fonts-ok .hero-kicker, .fonts-ok .hero-crown { animation: rise 600ms var(--ease-out) 80ms both; }
+.fonts-ok .h1-line > span { animation: line-up 760ms var(--ease-out) 140ms both; }
+.fonts-ok .hero-brush { animation: brush-wipe 900ms cubic-bezier(.65, 0, .35, 1) 420ms both; }
+.fonts-ok .hero-description { animation: rise 600ms var(--ease-out) 820ms both; }
+.fonts-ok .hero-actions > * { animation: rise 560ms var(--ease-out) 900ms both; }
+.fonts-ok .hero-actions > *:nth-child(2) { animation-delay: 960ms; }
+.fonts-ok .hero-benefits li { animation: rise 520ms var(--ease-out) 1020ms both; }
+.fonts-ok .hero-benefits li:nth-child(2) { animation-delay: 1080ms; } .fonts-ok .hero-benefits li:nth-child(3) { animation-delay: 1140ms; }
+.fonts-ok .culture-note { animation: note-in 800ms var(--ease-out) 1000ms both; }
 @keyframes hero-photo { from { transform: scale(1.06); filter: brightness(.6); } }
 @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
 @keyframes line-up { from { transform: translateY(105%); } }
@@ -598,3 +598,5 @@ section, footer { scroll-margin-top: calc(var(--nav-h) + 12px); }
   .service-copy .t2 { font-size: 12px; line-height: 1.4; }
   .card { height: 210px; }
 }
+/* Enquanto as fontes carregam, o texto do hero espera (sem troca visível de fonte) */
+.js:not(.fonts-ok) .hero-copy, .js:not(.fonts-ok) .culture-note { opacity: 0; }
