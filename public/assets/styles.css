@@ -408,3 +408,21 @@ button.dot::before { content: ''; position: absolute; inset: -.5cqw; border-radi
 @media (max-width: 599px) {
   .package-title .t3 { font-size: 9px; letter-spacing: .18em; }
 }
+@media (max-width: 599px) {
+  .package { grid-template-columns: 1fr; gap: 0; padding: 44px 34px 64px 30px; }
+  .package-title .h2 { font-size: 30px; }
+  .old-price { font-size: 13px; margin-top: 14px; } .price { font-size: 32px; } .price span { font-size: 16px; }
+  .package-details { padding-top: 16px; } .package-details ul { font-size: 13px; max-width: 72%; }
+  .package-details li::before { width: 12px; height: 12px; margin-right: 6px; }
+  .package-details .btn2 { float: none; font-size: 14px; min-height: 44px; padding: 10px 16px; margin-top: 16px; }
+  .package-details .btn2 .ico { display: inline-block; }
+}
+@media (max-width: 479px) {
+  .footer { grid-template-columns: 1fr; gap: 28px; padding: 40px 24px 90px; }
+  .footer .h3 { font-size: 15px; }
+  .contact p { font-size: 14px; } .contact strong { font-size: 15px; } .contact .ico { width: 20px; height: 22px; }
+  .contact address>div { gap: 12px; margin-bottom: 16px; } .contact p a { padding: 4px 0; }
+  .hours .h3 { font-size: 15px; } .hours dl { font-size: 14px; } .hours dt { min-width: 80px; }
+  .footer-booking { align-items: flex-start; padding-top: 30px; } .footer-booking .btn2 { font-size: 15px; min-height: 48px; padding: 12px 20px; }
+  .footer-booking>.ico { left: 40px; }
+}
