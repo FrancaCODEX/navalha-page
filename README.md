@@ -22,6 +22,8 @@ Edite só `assets/config.js`. Ele atualiza automaticamente:
 - o telefone exibido, os links e o @ do Instagram, o endereço (com link para o Google Maps) e os horários;
 - os dados estruturados (schema.org `BarberShop`) para buscadores.
 
+Ao alterar CSS ou JS, atualize o número `?v=` nos links do `index.html` para os visitantes receberem a versão nova.
+
 O HTML mantém os mesmos valores como conteúdo de reserva (aparece sem JavaScript). Se mudar um dado,
 atualize também o texto correspondente no `index.html` e a `description` das meta tags.
 
