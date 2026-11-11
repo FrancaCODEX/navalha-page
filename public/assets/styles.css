@@ -82,7 +82,7 @@
   --color-paper: #e9dcc6;
   --radius-card: 10px;
   --radius-button: 6px;
-  --page-width: 1440px;
+  --page-width: 1920px;
   --font-display: 'Anton', sans-serif;
   --font-card: 'Barlow Condensed', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -425,4 +425,10 @@ button.dot::before { content: ''; position: absolute; inset: -.5cqw; border-radi
   .hours .h3 { font-size: 15px; } .hours dl { font-size: 14px; } .hours dt { min-width: 80px; }
   .footer-booking { align-items: flex-start; padding-top: 30px; } .footer-booking .btn2 { font-size: 15px; min-height: 48px; padding: 12px 20px; }
   .footer-booking>.ico { left: 40px; }
+}
+/* Telas acima de 1920 px: laterais com a textura de fundo esmaecida */
+@media (min-width: 1921px) {
+  html { background: #0b0b0b url('background.jpg') center top / cover no-repeat fixed; }
+  html::before { content: ''; position: fixed; inset: 0; background: #0b0b0bd9; pointer-events: none; }
+  body { position: relative; box-shadow: 0 0 80px #000; }
 }
